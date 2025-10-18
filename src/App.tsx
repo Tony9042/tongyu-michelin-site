@@ -189,23 +189,18 @@ const Events: React.FC = () => (
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">活動介紹</h2>
         <p className="text-gray-600 mt-3">節慶檔期、限時優惠與社群互動，歡迎關注參加</p>
       </div>
-      <div className="grid md:grid-cols-3 gap-6">
-        {[
-          { tag: "進行中", title: "秋季安全檢查 + 輪胎換裝折抵", desc: "更換四輪指定胎款，贈到店禮 + 輪胎氮氣與定位折抵券。" },
-          { tag: "下月預告", title: "雙11 保養方案加碼", desc: "機油保養升級全合成，煞車油 8 折加購，會員點數回饋。" },
-          { tag: "社群互動", title: "打卡抽禮｜燈謎問答", desc: "到店打卡+分享貼文，完成燈謎答題即可參加輪盤抽獎。" },
-        ].map((e, i) => (
-          <div key={i} className="rounded-2xl hover:shadow-xl transition p-5 border bg-white">
-            <div className="inline-flex items-center text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 w-max">
-              <Calendar className="w-3 h-3 mr-1" /> {e.tag}
-            </div>
-            <div className="mt-3 font-semibold text-gray-900">{e.title}</div>
-            <p className="text-gray-600 mt-1">{e.desc}</p>
-          </div>
-        ))}
+
+      {/* 空狀態：目前暫無活動 */}
+      <div className="text-center text-gray-500 py-12 text-lg">
+        目前暫無活動，敬請期待！
       </div>
+
       <div className="mt-10 text-center">
-        <a href="#booking"><button className="rounded-2xl bg-emerald-600 text-white px-5 py-2 hover:bg-emerald-700">查看活動與預約</button></a>
+        <a href="#booking">
+          <button className="rounded-2xl bg-emerald-600 text-white px-5 py-2 hover:bg-emerald-700">
+            查看活動與預約
+          </button>
+        </a>
       </div>
     </div>
   </section>
