@@ -29,11 +29,16 @@ const NavBar: React.FC = () => (
 );
 
 // ---------- Hero (slideshow + reviews) ----------
-const Hero: React.FC = () => {
+function Hero() {
   const slides = [
-    { src: "/assets/slide1.jpg", alt: "店面外觀1" },
-    { src: "/assets/slide2.jpg", alt: "店面外觀2" },
-  ];
+  { src: "/assets/slide1.jpg", alt: "店面外觀1" },
+  { src: "/assets/car1.jpg", alt: "店面外觀2" },
+  { src: "/assets/car2.jpg", alt: "輪胎更換中" },
+  { src: "/assets/people.jpg", alt: "技師施工" },
+  { src: "/assets/slide2.jpg", alt: "店面正面照" },
+];
+
+
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -87,8 +92,7 @@ const Hero: React.FC = () => {
                   initial={{ opacity: 0, scale: 1.03 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.04 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                />
+                  transition={{ duration: 0.8, ease: "easeOut" }} />
               </AnimatePresence>
               <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
                 {slides.map((_, i) => (
@@ -96,8 +100,7 @@ const Hero: React.FC = () => {
                     key={i}
                     onClick={() => setIndex(i)}
                     className={`h-2 w-2 rounded-full ${i === index ? "bg-emerald-500" : "bg-white/70"}`}
-                    aria-label={`slide-${i + 1}`}
-                  />
+                    aria-label={`slide-${i + 1}`} />
                 ))}
               </div>
             </div>
@@ -122,7 +125,7 @@ const Hero: React.FC = () => {
       </div>
     </section>
   );
-};
+}
 
 // ---------- Services ----------
 const Services: React.FC = () => (
@@ -205,6 +208,7 @@ const Events: React.FC = () => (
     </div>
   </section>
 );
+;
 
 // ---------- Booking / Contact ----------
 const Booking: React.FC = () => (
