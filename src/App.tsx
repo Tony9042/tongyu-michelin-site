@@ -185,30 +185,104 @@ const About: React.FC = () => (
 );
 
 // ---------- Events ----------
-const Events: React.FC = () => (
-  <section id="events" className="py-16">
-    <div className="mx-auto max-w-7xl px-4">
-      <div className="mx-auto max-w-3xl text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">活動介紹</h2>
-        <p className="text-gray-600 mt-3">節慶檔期、限時優惠與社群互動，歡迎關注參加</p>
-      </div>
+const Events: React.FC = () => {
+  const activities = [
+    {
+      tag: "進行中",
+      title: "🎄✨ 統玉聖誕抽卡祭｜12 月限定活動 ✨🎄",
+      desc: `12 月來統玉不只保養車子，還能參加限時抽卡活動！
+每一張卡都有祝福、每一次抽都有驚喜 🎁
 
-      {/* 空狀態：目前暫無活動 */}
-      <div className="text-center text-gray-500 py-12 text-lg">
-        目前暫無活動，敬請期待！
-      </div>
+⭐ 參加資格
+• 消費滿 3000 元以上
+• 或更換 2 條輪胎
 
-      <div className="mt-10 text-center">
-        <a href="#booking">
-          <button className="rounded-2xl bg-emerald-600 text-white px-5 py-2 hover:bg-emerald-700">
-            查看活動與預約
-          </button>
-        </a>
+🎁 抽卡獎項
+1. 經典週曆
+2. 威士忌擴香瓶
+3. 冬天專用小毛毯
+4. 超級大獎（星巴克咖啡豆 / 日式烤肉爐）
+
+📅 活動時間：12/01～12/31`,
+      img: "/assets/events/event1.jpg",
+      start: "2025-12-01",
+      end: "2025-12-31",
+    },
+
+    {
+      tag: "熱烈進行中",
+      title: "12–1 月輪胎品牌活動｜換胎送好禮！統玉專屬優惠 🎁",
+      desc: `歲末寒冬，換胎最優惠的時候到了！各大品牌原廠好禮一次看 🎉
+
+🔥 BRIDGESTONE 普利司通｜12/1–1/31
+• 17 吋以上：4 條送硬殼後背包 1 個
+• 15–16 吋：4 條送 7-11 $200 商品卡
+
+⭐ NANKANG 南港輪胎｜12/1–1/31
+• 15 吋以上：購買 4 條送保溫瓶 1 組
+（數量有限，送完為止）
+
+🟦 MICHELIN 米其林｜12/22–2/15
+• 15 吋以上：4 條送西華卡式爐
+• 18 吋以上：再加贈解凍板 1 個`,
+      img: "/assets/events/event2.jpg",
+      start: "2025-12-01",
+      end: "2026-02-15",
+    },
+  ];
+
+  return (
+    <section id="events" className="py-16">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-3xl text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">活動介紹</h2>
+          <p className="text-gray-600 mt-3">節慶檔期、限時優惠與輪胎品牌合作活動，歡迎到店參加 🎉</p>
+        </div>
+
+        {/* 活動卡片列表 */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {activities.map((e, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="rounded-2xl overflow-hidden border border-emerald-100 bg-white shadow-sm hover:shadow-xl transition"
+            >
+              
+              <img src={e.img} alt={e.title} className="w-full max-h-90 object-contain" />
+
+
+              <div className="p-6 space-y-3">
+                <div className="inline-flex items-center text-xs px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                  {e.tag}
+                </div>
+
+                <h3 className="text-lg font-bold text-gray-900 whitespace-pre-line">{e.title}</h3>
+                <p className="text-gray-600 whitespace-pre-line text-sm leading-relaxed">{e.desc}</p>
+
+                <div className="text-sm text-gray-500 pt-2">
+                  📅 {e.start} ～ {e.end}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-10 text-center">
+          <a href="#booking">
+            <button className="rounded-2xl bg-emerald-600 text-white px-6 py-3 text-lg hover:bg-emerald-700 transition">
+              前往預約保養或換胎
+            </button>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-);
-;
+    </section>
+  );
+};
+
 
 // ---------- Booking / Contact ----------
 const Booking: React.FC = () => (
