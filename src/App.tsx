@@ -455,7 +455,7 @@ function Services() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 40 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed inset-x-4 top-1/2 -translate-y-1/2 max-w-md mx-auto bg-[#1a2235] border border-white/10 rounded-3xl p-7 z-50 shadow-2xl">
+              className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-md max-h-[85vh] overflow-y-auto bg-[#1a2235] border border-white/10 rounded-3xl p-7 z-50 shadow-2xl">
               <button onClick={() => setSelected(null)}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white/20 transition">
                 <X className="w-4 h-4" />
