@@ -450,12 +450,13 @@ function Services() {
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setSelected(null)}
               className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50" />
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 40 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-md max-h-[85vh] overflow-y-auto bg-[#1a2235] border border-white/10 rounded-3xl p-7 z-50 shadow-2xl">
+              className="pointer-events-auto w-full max-w-md max-h-[85vh] overflow-y-auto bg-[#1a2235] border border-white/10 rounded-3xl p-7 shadow-2xl">
               <button onClick={() => setSelected(null)}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white/20 transition">
                 <X className="w-4 h-4" />
@@ -482,6 +483,7 @@ function Services() {
                 </motion.button>
               </a>
             </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>
