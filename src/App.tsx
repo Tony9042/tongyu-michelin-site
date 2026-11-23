@@ -18,7 +18,7 @@ interface EventItem {
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-const STORAGE_KEY = "tonyu_events_v2";
+const STORAGE_KEY = "tonyu_events_v3";
 
 function loadEvents(fallback: EventItem[]): EventItem[] {
   try {
